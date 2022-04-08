@@ -1,13 +1,13 @@
-mylist = [5,2,9,1]
+mylist = ["z", "c", "t", "l", "a", "m", "v", "k", "f", "g", "y", "p"]
 
-def mysort(unsorted: list):
+def mysort(unsorted: list) -> list:
     mysorted = False
     tempvar = None
     max_index = len(unsorted)-1
 
     while mysorted == False:
+        
         for x in range(len(unsorted)):
-            print(x, unsorted)
             current_val = mylist[x]
             if x < max_index:
                 next_val = mylist[x+1]
@@ -25,8 +25,19 @@ def mysort(unsorted: list):
 
             else:
                  break
-        mysorted = True
-        return unsorted
+                
+        for x in range(len(unsorted)):
+            current_val = mylist[x]
+            if x < max_index:
+                next_val = mylist[x+1]
+                if current_val > next_val:
+                    break
+            else:
+                mysorted = True
+                return unsorted
+                    
+            
+                           
 
 new = mysort(mylist)
 print(new)
